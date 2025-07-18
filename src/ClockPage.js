@@ -10,7 +10,7 @@ function ClockPage() {
   const [clockData, setClockData] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/clock/${uniqueName}`)
+    axios.get(`https://clock-backend-ykc3.onrender.com/api/clock/${uniqueName}`)
       .then(res => setClockData(res.data))
       .catch(() => setClockData(null));
   }, [uniqueName]);
@@ -19,7 +19,7 @@ console.log(clockData);
 
   return (
     <div className="text-center py-4">
-      <ClockPreview userImage={`http://localhost:5000${clockData.photoUrl}`} userName = {clockData.name} />
+      <ClockPreview userImage={`https://clock-backend-ykc3.onrender.com${clockData.photoUrl}`} userName = {clockData.name} />
       <p className="mt-3 text-muted">Share this link: {window.location.href}</p>
     </div>
   );

@@ -36,7 +36,7 @@ function Create() {
     formData.append('uniqueName', uniqueName);
     setLoading(true);
     try {
-      const res = await fetch('/api/clock', {
+      const res = await fetch('https://clock-backend-ykc3.onrender.com/api/clock', {
         method: 'POST',
         body: formData,
       });
