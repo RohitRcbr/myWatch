@@ -19,8 +19,17 @@ console.log(clockData);
 
   return (
     <div className="text-center py-4">
-      <ClockPreview userImage={`https://clock-backend-ykc3.onrender.com${clockData.photoUrl}`} userName = {clockData.name} />
-      <p className="mt-3 text-muted">Share this link: {window.location.href}</p>
+      {
+        uniqueName ? (
+          <ClockPreview userImage={`https://clock-backend-ykc3.onrender.com${clockData.photoUrl}`} userName = {clockData.name} />
+        )
+        :
+        (
+          <ClockPreview userImage={`https://rcbrportfolio.netlify.app/images/profile.png`} userName = "Rohit" />
+      
+        )
+      }
+     <p className="mt-3 text-muted">Share this link: {window.location.href}</p>
     </div>
   );
 }
