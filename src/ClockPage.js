@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import ClockPreview from './ClockPreview';
+import RotatingFallbackClock from './RotatingFallbackClock';
 import axios from 'axios';
 
 function ClockPage() {
@@ -15,7 +16,13 @@ function ClockPage() {
       .catch(() => setClockData(null));
   }, [uniqueName]);
 console.log(clockData);
-  if (!clockData) return <h3>Clock not found</h3>;
+  if (!clockData) return (
+  <>
+
+  <RotatingFallbackClock />
+
+  </>
+  );
 
   return (
     <div className="text-center py-4">
@@ -26,7 +33,6 @@ console.log(clockData);
         :
         (
           <ClockPreview userImage={`https://rcbrportfolio.netlify.app/images/profile.png`} userName = "Rohit" />
-      
         )
       }
      <p className="mt-3 text-muted">Share this link: {window.location.href}</p>

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 
 function ClockPreview({ userImage, userName }) {
@@ -41,10 +42,23 @@ function ClockPreview({ userImage, userName }) {
       {
         userImage ? (
           <>
-            <div className='user-img'>
-              <img src={userImage} alt={userName}/>
-              <h5 className='user-name'>{userName}</h5>
-            </div>
+            <AnimatePresence mode="wait">
+            <motion.div
+              key={userImage + userName}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="user-img"
+            >
+              <img
+                src={userImage}
+                alt={userName}
+                className=""
+              />
+              <h4 className="mt-2 user-name">{userName}</h4>
+            </motion.div>
+          </AnimatePresence>
             </>
         ) :
           (
