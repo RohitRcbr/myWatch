@@ -42,7 +42,7 @@ function ClockPreview({ userImage, userName }) {
         userImage ? (
           <>
             <div className='user-img'>
-              <img src={userImage}></img>
+              <img src={userImage} alt={userName}/>
               <h5 className='user-name'>{userName}</h5>
             </div>
             </>
