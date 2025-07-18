@@ -1,0 +1,23 @@
+.card-header {
+    background: linear-gradient(135deg, #007bff, #00bfff);
+    color: white;
+    border-bottom: none;
+  }
+  
+  .card-body {
+    background-color: #f8f9fa;
+  }
+  
+  input::file-selector-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 6px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  input::file-selector-button:hover {
+    background-color: #0056b3;
+  }
