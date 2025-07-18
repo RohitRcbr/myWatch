@@ -133,9 +133,6 @@ body {
   -moz-border-radius: 100%;
   border-radius: 100%;
   z-index: 1;
-  /*>>>>>>>>>>>>  INNER FACE GRAPHIC <<<<<<<<<<<<<<<*/
-  background-image: url('');
-  background-size: 126%;
 }
 
 .inner-clock-face::before {
