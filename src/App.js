@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Create from './Create';
 import ClockPage from './ClockPage';
+import FindClock from './FindClock';
 function App() {
  
   return (
