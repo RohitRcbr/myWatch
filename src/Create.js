@@ -86,7 +86,7 @@ function Create() {
               <div className="mb-3 text-start">
                 <label className="form-label fw-semibold">
                   <FaImage className="me-2" />
-                  Upload Your Photo
+                  Upload Your Photo <small className='text-danger'>equal width and height (e.g 300x300)</small>
                 </label>
                 <input
                   type="file"
