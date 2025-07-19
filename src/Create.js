@@ -1,5 +1,6 @@
 // src/Create.js
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaUser, FaClock, FaImage } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -73,15 +74,19 @@ function Create() {
           transition={{ type: 'spring', duration: 0.6 }}
         >
           <div className="card shadow-lg border-0 rounded-4">
-            <div className="card-header bg-primary text-white text-center rounded-top-4">
-              <h3 className="mb-0">🕒 Create Your Clock</h3>
+            <div className="card-header bg-primary text-white text-center rounded-top-4 d-flex align -items-center justify-content-between">
+              <h5 className="mb-0">🕒 Create Your Clock</h5>
+              <Link to="/clock" className="btn btn-no-outline p-0 text-white
+              ">
+    Demo
+  </Link>
             </div>
             <div className="card-body bg-light rounded-bottom-4">
 
               <div className="mb-3 text-start">
                 <label className="form-label fw-semibold">
                   <FaImage className="me-2" />
-                  Upload Photo
+                  Upload Your Photo
                 </label>
                 <input
                   type="file"
@@ -107,7 +112,7 @@ function Create() {
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. John Doe"
+                  placeholder="e.g. Arif"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="form-control"
@@ -122,7 +127,7 @@ function Create() {
                 </label>
                 <input
                   type="text"
-                  placeholder="e.g. john-clock-2025"
+                  placeholder="e.g. arif-clock-2025"
                   value={uniqueName}
                   onChange={(e) => setUniqueName(e.target.value)}
                   className="form-control"
@@ -138,6 +143,7 @@ function Create() {
               </button>
             </div>
           </div>
+          <p className='text-center mt-5'>Designed and Developed by <a href='https://marifportfolio.netlify.app/' target='_blank' alt='arif portfolio'>Arif</a> and <a href='https://rcbrportfolio.netlify.app/' target='_blank' alt='Rohit Portfolio'>Rohit</a></p>
         </motion.div>
       </div>
     </div>
