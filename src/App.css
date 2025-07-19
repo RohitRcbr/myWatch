@@ -184,3 +184,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+@media(max-width: 991px){
+  .clock{
+    transform: scale(0.5);
+  }
+}

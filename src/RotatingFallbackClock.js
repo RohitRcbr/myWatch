@@ -28,9 +28,11 @@ function RotatingFallbackClock() {
 
   return (
    <>
-    <Link to="/" className="btn btn-outline-primary mt-2">
+    <div className='text-center'>
+      <Link to="/" className="btn btn-outline-primary mt-2">
     Create Your Own Clock
   </Link>
+  </div>
     <div className="text-center py-4">
       <ClockPreview
         userImage={currentClock.userImage}
