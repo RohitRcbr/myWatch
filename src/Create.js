@@ -143,7 +143,7 @@ function Create() {
               </button>
             </div>
           </div>
-          <p className='text-center mt-5'>Designed and Developed by <a href='https://marifportfolio.netlify.app/' target='_blank' alt='arif portfolio'>Arif</a> and <a href='https://rcbrportfolio.netlify.app/' target='_blank' alt='Rohit Portfolio'>Rohit</a></p>
+          <p className='text-center mt-5'>Designed and Developed by <a href='https://marifportfolio.netlify.app/' rel="noreferrer" target='_blank' alt='arif portfolio'>Arif</a> and <a href='https://rcbrportfolio.netlify.app/' rel="noreferrer" target='_blank' alt='Rohit Portfolio'>Rohit</a></p>
         </motion.div>
       </div>
     </div>
