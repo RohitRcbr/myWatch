@@ -27,9 +27,9 @@ function FindClock() {
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: 'spring', duration: 0.6 }}
-        className="row justify-content-center"
+        className=""
       >
-        <div className="col-md-6">
+        <div className="">
           <div className="card shadow-lg border-0 rounded-4">
             <div className="card-header bg-dark text-white text-center rounded-top-4">
               <h3 className="mb-0">🔍 Find Your Clock</h3>
