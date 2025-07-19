@@ -2,7 +2,19 @@
   "proxy": "http://localhost:5000",
   "name": "mywatch",
   "version": "0.1.0",
+  "main": "main.js",
   "private": true,
+  "build": {
+    "appId": "com.rohit.clock",
+    "productName": "Custom Clock",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "public/favicon.ico"
+    }
+  },
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -25,12 +37,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "react-scripts start",
+    "electron": "electron .",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "node server/index.js",
-    "client": "react-scripts start"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -51,6 +62,7 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^9.2.0"
+    "electron": "^37.2.3",
+    "electron-builder": "^26.0.12"
   }
 }

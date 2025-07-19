@@ -1,6 +1,6 @@
 // src/Create.js
 import React, { useState } from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaUser, FaClock, FaImage } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -55,98 +55,107 @@ function Create() {
   };
 
   return (
-<>
-{loading && (
-      <div className="fullscreen-loader">
-        <div className="text-center">
-          <div className="spinner-border text-primary" style={{ width: '4rem', height: '4rem' }} role="status"></div>
-          <p className="mt-3 fw-bold">Removing background, please wait...</p>
+    <>
+      {loading && (
+        <div className="fullscreen-loader">
+          <div className="text-center">
+            <div className="spinner-border text-primary" style={{ width: '4rem', height: '4rem' }} role="status"></div>
+            <p className="mt-3 fw-bold">Removing background, please wait...</p>
+          </div>
+        </div>
+      )}
+
+      <div className="container py-5">
+        <div className="">
+          <motion.div
+            className=""
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ type: 'spring', duration: 0.6 }}
+          >
+            <div className="card shadow-lg border-0 rounded-4">
+              <div className="card-header bg-primary text-white text-center rounded-top-4 d-flex align -items-center justify-content-between">
+                <h5 className="mb-0">🕒 Create Your Clock</h5>
+                <Link to="/clock" className="btn btn-no-outline p-0 text-white
+              ">
+                  Demo
+                </Link>
+              </div>
+              <div className="card-body bg-light rounded-bottom-4">
+
+                <div className="mb-3 text-start">
+                  <label className="form-label fw-semibold">
+                    <FaImage className="me-2" />
+                    Upload Your Photo <small className='text-danger'>equal width and height (e.g 300x300)</small>
+                  </label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="form-control"
+                  />
+                  {errors.photo && <small className="text-danger">{errors.photo}</small>}
+                  {previewUrl && (
+                    <img
+                      src={previewUrl}
+                      alt="preview"
+                      className="img-fluid mt-2 rounded shadow"
+                      style={{ maxHeight: '200px' }}
+                    />
+                  )}
+                </div>
+
+                <div className="mb-3 text-start">
+                  <label className="form-label fw-semibold">
+                    <FaUser className="me-2" />
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Arif"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="form-control"
+                  />
+                  {errors.name && <small className="text-danger">{errors.name}</small>}
+                </div>
+
+                <div className="mb-4 text-start">
+                  <label className="form-label fw-semibold">
+                    <FaClock className="me-2" />
+                    Unique Clock Name
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="e.g. arif-clock-2025"
+                    value={uniqueName}
+                    onChange={(e) => setUniqueName(e.target.value)}
+                    className="form-control"
+                  />
+                  {errors.uniqueName && <small className="text-danger">{errors.uniqueName}</small>}
+                </div>
+
+                <button
+                  className="btn btn-success w-100 py-2 fw-bold"
+                  onClick={handleSubmit}
+                >
+                  🚀 Generate Clock
+                </button>
+
+                <div className="text-center mt-3">
+                  <small className="text-muted">
+                    Already have a clock?{' '}
+                    <Link to="/find" className="text-primary fw-semibold text-decoration-none">
+                      Find your clock
+                    </Link>
+                  </small>
+                </div>
+              </div>
+            </div>
+            <p className='text-center mt-5'>Designed and Developed by <a href='https://marifportfolio.netlify.app/' rel="noreferrer" target='_blank' alt='arif portfolio'>Arif</a> and <a href='https://rcbrportfolio.netlify.app/' rel="noreferrer" target='_blank' alt='Rohit Portfolio'>Rohit</a></p>
+          </motion.div>
         </div>
       </div>
-    )}
-
-    <div className="container py-5">
-      <div className="">
-        <motion.div
-          className=""
-          initial={{ y: 50, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ type: 'spring', duration: 0.6 }}
-        >
-          <div className="card shadow-lg border-0 rounded-4">
-            <div className="card-header bg-primary text-white text-center rounded-top-4 d-flex align -items-center justify-content-between">
-              <h5 className="mb-0">🕒 Create Your Clock</h5>
-              <Link to="/clock" className="btn btn-no-outline p-0 text-white
-              ">
-    Demo
-  </Link>
-            </div>
-            <div className="card-body bg-light rounded-bottom-4">
-
-              <div className="mb-3 text-start">
-                <label className="form-label fw-semibold">
-                  <FaImage className="me-2" />
-                  Upload Your Photo <small className='text-danger'>equal width and height (e.g 300x300)</small>
-                </label>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageChange}
-                  className="form-control"
-                />
-                {errors.photo && <small className="text-danger">{errors.photo}</small>}
-                {previewUrl && (
-                  <img
-                    src={previewUrl}
-                    alt="preview"
-                    className="img-fluid mt-2 rounded shadow"
-                    style={{ maxHeight: '200px' }}
-                  />
-                )}
-              </div>
-
-              <div className="mb-3 text-start">
-                <label className="form-label fw-semibold">
-                  <FaUser className="me-2" />
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. Arif"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="form-control"
-                />
-                {errors.name && <small className="text-danger">{errors.name}</small>}
-              </div>
-
-              <div className="mb-4 text-start">
-                <label className="form-label fw-semibold">
-                  <FaClock className="me-2" />
-                  Unique Clock Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="e.g. arif-clock-2025"
-                  value={uniqueName}
-                  onChange={(e) => setUniqueName(e.target.value)}
-                  className="form-control"
-                />
-                {errors.uniqueName && <small className="text-danger">{errors.uniqueName}</small>}
-              </div>
-
-              <button
-                className="btn btn-success w-100 py-2 fw-bold"
-                onClick={handleSubmit}
-              >
-                🚀 Generate Clock
-              </button>
-            </div>
-          </div>
-          <p className='text-center mt-5'>Designed and Developed by <a href='https://marifportfolio.netlify.app/' rel="noreferrer" target='_blank' alt='arif portfolio'>Arif</a> and <a href='https://rcbrportfolio.netlify.app/' rel="noreferrer" target='_blank' alt='Rohit Portfolio'>Rohit</a></p>
-        </motion.div>
-      </div>
-    </div>
     </>
   );
 }

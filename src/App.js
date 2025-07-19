@@ -7,6 +7,7 @@ function App() {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<Create />} />
+      <Route path="/find" element={<FindClock />} /> {/* ✅ */}
       <Route path="/clock" element={<ClockPage />} />
       <Route path="/clock/:uniqueName" element={<ClockPage />} />
     </Routes>
